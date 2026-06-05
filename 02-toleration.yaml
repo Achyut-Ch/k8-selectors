@@ -8,8 +8,12 @@ metadata:
     containers:
     - name: nginx
       image: nginx
+    # asing vor vip room
+    nodeSelector:
+      Project: roboshop
+    # showing booking confirmation
     tolerations:
     - key: "project"
       operator: "Equal"
       value: "roboshop"
-      effect: "NoSchedule"
+      effect: "NoExecute"
